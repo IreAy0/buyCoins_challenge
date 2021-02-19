@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tailwind 2.0</title>
+    <link rel="stylesheet" href="css/tailwind.css" />
+</head>
+<body>
+<header>
+    
+<div>
+    <nav class="bg-gray-900  dark:bg-gray-800   shadow ">
+        <div class=" mx-auto px-3 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class=" flex md:hidden">
+                    <button id="navBtn" class="text-gray-800 dark:text-white hover:text-gray-300 inline-flex items-center justify-center p-2 rounded-md focus:outline-none">
+                        <svg width="20" height="20" fill="currentColor" class="h-8 w-8 text-white" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <div class=" flex items-center">
+                      <a href="https://github.com/Charlie85270/tail-kit" class="p-1 flex-shrink-0 rounded-full text-gray-400 focus:outline-none hover:text-gray-200 focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                            <span class="sr-only">
+                                View github
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg"  fill="#fff" class="text-xl hover:text-gray-800 dark:hover:text-white transition-colors duration-200 h-10" viewBox="0 0 1792 1792">
+                                <path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z">
+                                </path>
+                            </svg>
+                        </a> 
+                    <div class="hidden md:block">
+
+                      
+                        <div class="ml-3 flex items-baseline ">
+                          
+              <div class=" relative ">
+                  
+                <input type="text" id="rounded-email" class=" rounded-md border-transparent flex-1 appearance-none border border-gray-600 w-full focus:border-gray-400 py-1 px-4 bg-transparent text-gray-700 placeholder-gray-400 text-sm   focus:outline-none " placeholder="Search or jump to"/>
+                </div>
+
+                            <a class="text-white capitalize hover:text-gray-400 dark:hover:text-white px-3 py-2 rounded-md text-sm font-semibold" href="/#">
+                                pull requests
+                            </a>
+                            <a class="text-white capitalize hover:text-gray-400 dark:text-white  dark:hover:text-white px-3 py-2 rounded-md text-sm font-semibold" href="/#">
+                                issues
+                            </a>
+                            <a class="text-white capitalize hover:text-gray-400 dark:hover:text-white px-3 py-2 rounded-md text-sm font-semibold" href="/#">
+                                codespaces
+                            </a>
+                            <a class="text-white capitalize hover:text-gray-400 dark:hover:text-white px-3 py-2 rounded-md text-sm font-semibold" href="/#">
+                                marketplaces
+                            </a>
+                             <a class="text-white capitalize hover:text-gray-400 dark:hover:text-white px-3 py-2 rounded-md text-sm font-semibold" href="/#">
+                                explore
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="lg:ml-4 flex items-center md:ml-6">
+                      
+<div class="relative inline-block text-left">
+    <div>
+        <button type="button" class="  h-10  flex items-center justify-center w-full rounded-md  px-4 py-2 text-sm font-medium text-gray-700  focus:outline-none " id="options-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" class="text-white h-6" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              </svg>
+            <svg width="20" height="20" fill="#fff" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1408 704q0 26-19 45l-448 448q-19 19-45 19t-45-19l-448-448q-19-19-19-45t19-45 45-19h896q26 0 45 19t19 45z">
+                </path>
+            </svg>
+        </button>
+    </div>
+    <div id="menu" class="hidden origin-top-right absolute z-40 right-0 mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5">
+        <div class="py-1 " role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+            <a href="#" class="block  px-4 py-2 text-sm text-gray-700 hover:bg-blue-700 hover:text-white dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-600" role="menuitem">
+                <span class="flex flex-col">
+                    <span>
+                        New repository
+                    </span>
+                </span>
+            </a>
+            <a href="#" class="block  px-4 py-2 text-sm text-gray-700 hover:bg-blue-700 hover:text-white dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-600" role="menuitem">
+                <span class="flex flex-col">
+                    <span>
+                       Import repository
+                    </span>
+                </span>
+            </a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-700 hover:text-white dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-600" role="menuitem">
+                <span class="flex flex-col">
+                    <span>
+                        New gist
+                    </span>
+                </span>
+            </a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-700 hover:text-white dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-600" role="menuitem">
+                <span class="flex flex-col">
+                    <span>
+                        New organization
+                    </span>
+                </span>
+            </a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-700 hover:text-white dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-600" role="menuitem">
+                <span class="flex flex-col">
+                    <span>
+                        New project
+                    </span>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+
+    <div class="lg:block hidden">
+        <button type="button" class="  h-10  flex items-center justify-center w-full rounded-md  px-2 py-2 text-sm font-medium text-gray-700  focus:outline-none " id="options-menu">
+        
+<div href="#" class="block  h-10 w-10 rounded-full bg-gray-400">
+    <img id="avatar-small" alt="profil" src="" class="mx-auto object-cover rounded-full h-10 w-10 "/>
+</div>
+
+            <svg width="20" height="20" fill="#fff" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1408 704q0 26-19 45l-448 448q-19 19-45 19t-45-19l-448-448q-19-19-19-45t19-45 45-19h896q26 0 45 19t19 45z">
+                </path>
+            </svg>
+        </button>
+    </div>
+                      
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        <div class="md:hidden" >
+            <div id="navMenu" class="hidden px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a class="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="/#">
+                    Home
+                </a>
+                <a class="text-gray-800 dark:text-white block px-3 py-2 rounded-md text-base font-medium" href="/#">
+                    Gallery
+                </a>
+                <a class="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="/#">
+                    Content
+                </a>
+                <a class="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="/#">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+</header>
+<main>
+
+    <div class="relative bg-white dark:bg-gray-800 py-4 overflow-hidden">
+        <div class="relative hidden lg:block">
+                 <div class="sidebar-header border-b">
+                   <ul class="flex repo-tabs sidebar w-5/6 lg:ml-80">
+                     <li>
+                       Overview
+                     </li>
+                     <li>
+                       repositories
+                     </li>
+                     <li>projects</li>
+                     <li>packages</li>
+                   </ul>
+                 </div>
+               </div>
+         <div class="lg:flex  px-4 md:px-0">
+           
+             <div class=" my-2   lg:w-1/4 z-40 lg:-mt-6">
+                 <div id="profileCard" class=" flex flex-col items-center justify-center">
+                    <div class="bg-gray-400 rounded-full" style="width: 250px; height:250px;">
+                        <img id="cardImg" src="" class="  mx-auto shadow-lg rounded-full " width="250"/>
+                     </div>
+                   
+                     <div class="mt-3 w-2/3 mx-auto">
+                         <p id="name" class="text-xl font-bold">Fullname Full name</p>
+                         <p id="username" class="text-base text-gray-400 font-semibold">username<p/>
+                         <p id="bio" class="mt-3 text-wrap font-semibold text-base">frontend developer and user interface designer</p>
+                     </div>
+                 </div>
+                
+             </div>
+             <div class=" w-full lg:w-3/4 my-2   mr-8">
+              
+                 <div class="search border-b pb-3">
+                   <label class="block">
+                  
+                   <input type="text" class="mt-1 block border py-1 px-3 rounded-md w-full placeholder-gray-500 focus:outline-none focus:border-blue-500" placeholder="Find a repositories" />
+                 </label>
+                 </div>
+                 <div class="total py-2 hidden md:block">
+                   <span class="text-sm border-b  pb-1"> <span class="font-semibold" id="totalRepo"></span>   results for <span class="font-semibold">public</span>  repositories</span>
+                   
+                 </div>
+                <div class="repos" id="repos">
+                    <ul id="repoUl"></ul>
+                </div>
+                
+             </div>
+           
+         </div>
+     </div>
+     
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
