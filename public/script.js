@@ -1,10 +1,18 @@
+import { apiKey } from './module.js';
+
+
+
+
+console.log(apiKey)
+
+
 const api = 'https://api.github.com/graphql'
 const options = {
     method:'POST',
     headers:{
         'content-type': 'application/json',
         'Accept': 'application/json',
-        Authorization : 'bearer 9a15f62e068bdc58336d10a0555ea4bb182e75f9',
+        Authorization : `bearer ${apiKey} `,
         // 'keys':'9a15f62e068bdc58336d10a0555ea4bb182e75f9'
     },
     body: JSON.stringify({
