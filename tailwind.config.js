@@ -1,3 +1,5 @@
+// import { LazyResult } from './node_modules/postcss/lib/postcss'
+
 const { LazyResult } = require("postcss");
 
 module.exports = {
@@ -10,6 +12,7 @@ module.exports = {
     extend: {
       colors: {
        
+
       }
     },
   },
