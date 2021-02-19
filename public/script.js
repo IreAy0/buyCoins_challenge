@@ -3,9 +3,6 @@ import { apiKey } from './module.js';
 
 
 
-console.log(apiKey)
-
-
 const api = 'https://api.github.com/graphql'
 const options = {
     method:'POST',
@@ -55,6 +52,7 @@ const cardImg = document.getElementById('cardImg')
 const nameEl = document.getElementById('name')
 const username = document.getElementById('username')
 const bio = document.getElementById('bio')
+const bioSmall = document.getElementById('bioSmall')
 const totalRepo = document.getElementById('totalRepo')
 const avatarSmall = document.getElementById('avatar-small')
 const optionsMenu =document.getElementById('options-menu')
@@ -183,10 +181,13 @@ function getDetails(profileDetails) {
  
     console.log(profileDetails.name);
     cardImg.src =profileDetails.avatarUrl;
+    cardImg.alt = profileDetails.name
     nameEl.innerText = profileDetails.name
 username.innerText = profileDetails.login
 bio.innerText = profileDetails.bio
-avatarSmall.src =profileDetails.avatarUrl
+bioSmall.innerText = profileDetails.bio
+avatarSmall.src =profileDetails.avatarUrl;
+avatarSmall.alt=profileDetails.name
 
 }
 

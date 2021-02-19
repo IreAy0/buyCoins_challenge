@@ -4,4 +4,7 @@
 .repo-tabs li {
 @apply text-sm py-3 px-10 capitalize text-center;
 }
+.repo-tabs--small li {
+    @apply text-sm py-3 px-4 capitalize text-center;
+    }
 @tailwind utilities;
