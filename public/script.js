@@ -1,45 +1,50 @@
-import { apiKey } from './module.js';
+import { jj } from './module.js';
 
-
+// import {moment}  from '../node_modules/moment/ts3.1-typings/moment.d.ts';
+// moment()
 
 
 const api = 'https://api.github.com/graphql'
 const options = {
     method:'POST',
     headers:{
-        'content-type': 'application/json',
-        'Accept': 'application/json',
-        Authorization : `bearer ${apiKey} `,
-        // 'keys':'9a15f62e068bdc58336d10a0555ea4bb182e75f9'
-    },
+      'content-type': 'application/json',
+      'Accept': 'application/json',
+      Authorization : `bearer ${jj} `,
+      // 'keys':'9a15f62e068bdc58336d10a0555ea4bb182e75f9'
+  },
     body: JSON.stringify({
         query : `
-      {  viewer {
-            name
+        {
+          repositoryOwner(login: "yabacoder") {
             login
-            bio
-            company
-            avatarUrl
             repositories(last: 20) {
-              
-              totalCount
               nodes {
                 forkCount
-                stargazerCount
                 name
-                description
-               pushedAt
+                stargazerCount
                 updatedAt
-               primaryLanguage {
-                 name
-                color
+                description
+                descriptionHTML
+                primaryLanguage {
+                  color
+                  name
                 }
-              
               }
-              
+              totalCount
+            }
+            avatarUrl
+            ... on User {
+              id
+              email
+              avatarUrl
+              bio
+              bioHTML
+              name
             }
           }
         }
+        
         `,
         variables: {},
     }),
@@ -65,17 +70,19 @@ getRepo()
 async function getRepo() {
     const resp = await fetch(api, options);
     const respData = await resp.json();
-    console.log(respData.data.viewer);
+    console.log(respData);
 
-getRepos(respData.data.viewer.repositories)
-getDetails(respData.data.viewer)
+getRepos(respData.data.repositoryOwner.repositories)
+getDetails(respData.data.repositoryOwner)
 }
 
 function getRepos(details) {
     console.log(details)
     details.nodes.reverse().forEach(detail => {
-       
-        
+       let myDate = new Date(detail.updatedAt)
+    
+      // m = moment(detail.updatedAt, 'YYYY-MM-DD')
+      console.log(myDate)
        let lng ='';// typeof(detail.primaryLanguage);
        let color = '';
        if(detail.primaryLanguage !== null) {
