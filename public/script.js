@@ -1,4 +1,4 @@
-import { jj } from './module.js';
+import {  apiKey } from './module.js';
 
 // import {moment}  from '../node_modules/moment/ts3.1-typings/moment.d.ts';
 // moment()
@@ -10,7 +10,7 @@ const options = {
     headers:{
       'content-type': 'application/json',
       'Accept': 'application/json',
-      Authorization : `bearer ${jj} `,
+      'Authorization' : `bearer ${apiKey} `,
       // 'keys':'9a15f62e068bdc58336d10a0555ea4bb182e75f9'
   },
     body: JSON.stringify({
@@ -68,7 +68,7 @@ const navMenu = document.getElementById('navMenu')
 getRepo()
 
 async function getRepo() {
-    const resp = await fetch(api, options(user));
+    const resp = await fetch(api, options);
     const respData = await resp.json();
     console.log(respData);
 
