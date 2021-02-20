@@ -68,7 +68,7 @@ const navMenu = document.getElementById('navMenu')
 getRepo()
 
 async function getRepo() {
-    const resp = await fetch(api, options);
+    const resp = await fetch(api, options(user));
     const respData = await resp.json();
     console.log(respData);
 
