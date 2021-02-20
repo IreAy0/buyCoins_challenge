@@ -1,4 +1,6 @@
-import {  apiKey } from './module.js';
+
+
+import {  apiKey } from './api.js';
 
 // import {moment}  from '../node_modules/moment/ts3.1-typings/moment.d.ts';
 // moment()
