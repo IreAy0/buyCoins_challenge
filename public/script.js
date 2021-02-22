@@ -1,7 +1,7 @@
 
 
-import {  apiKey } from './api.js';
-
+// import {  apiKey } from './api.js';
+// 
 // import {moment}  from '../node_modules/moment/ts3.1-typings/moment.d.ts';
 // moment()
 
@@ -12,7 +12,7 @@ const options = {
     headers:{
       'content-type': 'application/json',
       'Accept': 'application/json',
-      'Authorization' : `bearer ${apiKey} `,
+      // 'Authorization' : `bearer ${apiKey} `,
       // 'keys':'9a15f62e068bdc58336d10a0555ea4bb182e75f9'
   },
     body: JSON.stringify({
