@@ -18,7 +18,7 @@ const options = {
     body: JSON.stringify({
         query : `
         {
-          repositoryOwner(login: "yabacoder") {
+          repositoryOwner(login: "IreAy0") {
             login
             repositories(last: 20) {
               nodes {
