@@ -1,10 +1,4 @@
-
-
-import {  apiKey } from '../myKey';
-// 
-// import {moment}  from '../node_modules/moment/ts3.1-typings/moment.d.ts';
-// moment()
-
+import { KEY } from "babel-dotenv"
 
 const api = 'https://api.github.com/graphql'
 const options = {
@@ -12,8 +6,8 @@ const options = {
     headers:{
       'content-type': 'application/json',
       'Accept': 'application/json',
-      'Authorization' : `bearer ${apiKey} `,
-      // 'keys':'9a15f62e068bdc58336d10a0555ea4bb182e75f9'
+      'Authorization' : `bearer ${KEY} `,
+  
   },
     body: JSON.stringify({
         query : `
@@ -67,24 +61,96 @@ const menu =document.getElementById('menu')
 const navBtn = document.getElementById('navBtn')
 const navMenu = document.getElementById('navMenu')
 
-getRepo()
+// getRepo()
 
-async function getRepo() {
-    const resp = await fetch(api, options);
-    const respData = await resp.json();
-    console.log(respData);
+// async function getRepo() {
+//     const resp = await fetch(api, options);
+//     const respData = await resp.json();
+//     console.log(respData);
 
-getRepos(respData.data.repositoryOwner.repositories)
-getDetails(respData.data.repositoryOwner)
+// getRepos(respData.data.repositoryOwner.repositories)
+// getDetails(respData.data.repositoryOwner)
+// }
+
+fetch(api, options)
+.then((resp) =>resp.json())
+.then((data)=>{
+  getRepos(data.data.repositoryOwner.repositories)
+   getDetails(data.data.repositoryOwner)
+  // console.log(data)
+})
+
+function diff_months(dt2, dt1) 
+ {
+
+  var diff =(dt2.getTime() - dt1.getTime()) / 1000;
+   diff /= (60 * 60 * 24 * 7 * 4);
+  return Math.abs(Math.round(diff));
+  
+ }
+function diff_years(dt2, dt1) 
+ {
+
+  var diff =(dt2.getTime() - dt1.getTime()) / 1000;
+   diff /= (60 * 60 * 24);
+  return Math.abs(Math.round(diff/365.25));
+   
+ }
+
+
+function formatDate(date) {
+  let presentDate = new Date()
+  let dayOfMonth = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+  let hour = date.getHours();
+  let minutes = date.getMinutes();
+  let diffMs = presentDate - date;
+ let diffMnth = diff_months(date, presentDate)
+ let diffYears = diff_years(date, presentDate)
+  let diffSec = Math.round(diffMs / 1000);
+  let diffMin = Math.round(diffSec / 60);
+  let diffHour = Math.round(diffMin / 60);
+  let diffDays = Math.round(diffSec / 3600 / 24);
+  let diffWeeks = Math.round( diffMs / (7 * 24 * 60 * 60 * 1000))
+
+
+  year = year.toString().slice(-2);
+  month = month < 10 ? '0' + month : month;
+  dayOfMonth = dayOfMonth < 10 ? '0' + dayOfMonth : dayOfMonth;
+  hour = hour < 10 ? '0' + hour : hour;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+
+  if (diffSec < 1) {
+    return 'right now';
+  } else if (diffMin < 1) {
+    return `${diffSec} sec. ago`
+  } else if (diffHour < 1) {
+    return `${diffMin} min. ago`
+  } else if (diffDays < 1) {
+    return `${diffHour} hours ago`
+  }
+  else if(diffWeeks < 1 ){
+    return ` ${diffDays} Day(s) ago`
+  }
+  else if (diffMnth <= 2){
+    return `${diffWeeks} weeks ago`
+  }
+  else if (diffYears < 1){
+    return `${diffMnth} months ago`
+  }
+  
+   else {
+    return `${dayOfMonth}.${month}.${year} `
+  }
 }
-
 function getRepos(details) {
-    console.log(details)
+    // console.log(details)
     details.nodes.reverse().forEach(detail => {
        let myDate = new Date(detail.updatedAt)
     
-      // m = moment(detail.updatedAt, 'YYYY-MM-DD')
-      console.log(myDate)
+    
+      // console.log(myDate)
        let lng ='';// typeof(detail.primaryLanguage);
        let color = '';
        if(detail.primaryLanguage !== null) {
@@ -150,7 +216,7 @@ function getRepos(details) {
                      <li class="ml-4 flex justify-center items-center text-xs lg:text-sm">
                       
                         <span class="forkNumber ml-1">
-                        updated on 1st of october
+                        ${formatDate(myDate)}
 
                         </span>
                     </li>
@@ -188,7 +254,7 @@ function getDetails(profileDetails) {
     
     totalRepo.innerText = repoLen
  
-    console.log(profileDetails.name);
+    // console.log(profileDetails.name);
     cardImg.src =profileDetails.avatarUrl;
     cardImg.alt = profileDetails.name
     nameEl.innerText = profileDetails.name

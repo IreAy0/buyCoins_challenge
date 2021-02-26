@@ -3,10 +3,7 @@
 const { LazyResult } = require("postcss");
 
 module.exports = {
-  purge: {
-    mode: LazyResult,
-    content: ['./public/**/*.html'],
-  },
+  purge: ['./**/*.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
